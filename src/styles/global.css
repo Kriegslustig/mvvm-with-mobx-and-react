@@ -5,3 +5,7 @@ html {
 code {
   line-height: 2em;
 }
+
+section {
+  padding: 1rem;
+}

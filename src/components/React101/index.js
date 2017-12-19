@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 
 import Slide from '../Slide'
+import Columns from '../Columns'
 import EditableSpan from '../EditableSpan'
 import bindViewModel from '../../utils/bindViewModel'
 import reactTag from '../../utils/reactTag'
 import mkViewModel from './viewModel'
-import styles from './styles.module.css'
 
 const slideDefinitionCode =
 `const Slide = ({ title, content }) =>
@@ -20,15 +20,15 @@ const slideRenderCode = (title, content) => reactTag`<Slide
   />`
 
 const React101 = ({ viewModel }) =>
-  <div className={styles.container}>
-    <section className={styles.column}>
-      <pre className={styles.row}>
+  <Columns>
+    <section>
+      <pre>
         <code>
           {slideDefinitionCode}
         </code>
       </pre>
       <hr/>
-      <pre className={styles.row}>
+      <pre>
         <code>
           {slideRenderCode(
             (
@@ -49,7 +49,7 @@ const React101 = ({ viewModel }) =>
       <hr/>
       <button onClick={viewModel.handleRender}>Render!</button>
     </section>
-    <section className={styles.column}>
+    <section>
       {viewModel.showFakeSlide && (
         <Slide
           title={viewModel.fakeSlideProps.title}
@@ -57,6 +57,6 @@ const React101 = ({ viewModel }) =>
           />
       )}
     </section>
-  </div>
+  </Columns>
 
 export default bindViewModel(mkViewModel, React101)
