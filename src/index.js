@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './components/App'
-import styles from './styles/global.css'
+import './styles/writ.css'
+import './styles/global.css'
 
 ReactDOM.render(
   React.createElement(App),
