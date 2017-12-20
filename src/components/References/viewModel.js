@@ -8,6 +8,10 @@ const mkViewModel = () => mobx.observable({
       'Martin Fowler on the Presentation Model pattern (aka. MVVM)',
       'https://martinfowler.com/eaaDev/PresentationModel.html'
     ],
+    [
+      'https://github.com/Kriegslustig/mvvm-with-mobx-and-react',
+      'https://github.com/Kriegslustig/mvvm-with-mobx-and-react',
+    ],
   ])
 })
 
