@@ -1,0 +1,38 @@
+[
+  {
+    "component": "React101",
+    "title": "React 101"
+  },
+  {
+    "component": "MobX101",
+    "title": "MobX 101"
+  },
+  {
+    "component": "ArchitectureGoals",
+    "title": "Goals of a New Architecture"
+  },
+  {
+    "component": "MvvmOverview",
+    "title": "MVVM"
+  },
+  {
+    "component": "MvvmModel",
+    "title": "MVVM – Model"
+  },
+  {
+    "component": "MvvmViewModel",
+    "title": "MVVM – ViewModel"
+  },
+  {
+    "component": "MvvmView",
+    "title": "MVVM – View"
+  },
+  {
+    "component": "MvvmViewViewModelPairs",
+    "title": "View + ViewModel"
+  },
+  {
+    "component": "References",
+    "title": "That's it!"
+  }
+]

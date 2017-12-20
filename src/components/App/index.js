@@ -1,9 +1,9 @@
 import React from 'react'
 
-import React101 from '../React101'
+import Slides from '../Slides'
 
 const App = () => (
-  <React101/>
+  <Slides/>
 )
 
 export default App

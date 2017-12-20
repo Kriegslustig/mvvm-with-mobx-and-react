@@ -1,18 +1,23 @@
 import * as mobx from 'mobx'
 
+import mkSlide from './Slide'
+
 const CURRENT_SLIDE_KEY = 'current-slide'
 
 const mkSlides = () => {
-  const slides = mobx.observalbe({
+  const slides = mobx.observable({
     current: 0,
+    currentSlide: mobx.computed(() =>
+      slides.array[slides.current]
+    ),
 
     _getPersistentState: () =>
       localStorage.getItem(CURRENT_SLIDE_KEY),
     _setPersistentState: (slideNumber) =>
       localStorage.setItem(CURRENT_SLIDE_KEY, slideNumber),
     loadPersistentState: mobx.action(() => {
-      slides.current = slides._getPersistentState()
-    })
+      slides.current = slides._getPersistentState() || 0
+    }),
 
     setSlide: (newSlide) => { slides.current = newSlide },
 
@@ -22,7 +27,7 @@ const mkSlides = () => {
       }
     }),
 
-    nextSlide: mobx.action((newSlide) => {
+    lastSlide: mobx.action((newSlide) => {
       if (slides.current > 0) {
         slides.current -= 1
       }
