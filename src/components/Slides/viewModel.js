@@ -9,6 +9,8 @@ import MvvmViewModel from '../../components/MvvmViewModel'
 import MvvmView from '../../components/MvvmView'
 import MvvmViewViewModelPairs from '../../components/MvvmViewViewModelPairs'
 import References from '../../components/References'
+import Intro from '../../components/Intro'
+
 import mkSlides from '../../models/Slides'
 import slides from '../../data/slides.json'
 
@@ -25,18 +27,28 @@ slidesModel.loadComponents({
   MvvmView,
   MvvmViewViewModelPairs,
   References,
+  Intro,
 })
 
 slidesModel.loadSlides(slides)
 
 const mkViewModel = () => {
   const vm = mobx.observable({
-    component: mobx.computed(() =>
+    title: mobx.computed(() =>
+      slidesModel.currentSlide.title
+    ),
+
+    content: mobx.computed(() =>
+      console.log(slidesModel.currentSlide.component) ||
       slidesModel.currentSlide.component
     ),
 
-    handleClick: () => {
+    handleClickNext: () => {
       slidesModel.nextSlide()
+    },
+
+    handleClickPrevious: () => {
+      slidesModel.previousSlide()
     },
   })
 

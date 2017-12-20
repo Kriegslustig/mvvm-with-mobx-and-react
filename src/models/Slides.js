@@ -27,7 +27,7 @@ const mkSlides = () => {
       }
     }),
 
-    lastSlide: mobx.action((newSlide) => {
+    previousSlide: mobx.action((newSlide) => {
       if (slides.current > 0) {
         slides.current -= 1
       }

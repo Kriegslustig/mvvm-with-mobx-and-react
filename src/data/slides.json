@@ -1,5 +1,9 @@
 [
   {
+    "component": "Intro",
+    "title": "MVVM with MobX and React"
+  },
+  {
     "component": "React101",
     "title": "React 101"
   },

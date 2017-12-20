@@ -1,0 +1,31 @@
+.container {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.previous,
+.next {
+  position: absolute;
+  width: 50%;
+  height: 10vh;
+  bottom: 0;
+}
+
+.previous:hover,
+.next:hover {
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.next {
+  left: 0;
+}
+
+.previous {
+  right: 0;
+}
+
+/* HACK: yeah... */
+.container pre {
+  padding: 2rem;
+}

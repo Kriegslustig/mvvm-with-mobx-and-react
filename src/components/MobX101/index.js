@@ -15,6 +15,13 @@ reactTag`const price = mobx.observable({
   ),
 })`
 
+const viewModelResult = (net, vat, total) =>
+`{
+  net: ${net},
+  vat: ${vat},
+  total: ${total},
+}`
+
 const MobX101 = ({ viewModel }) =>
   <Columns>
     <section>
@@ -34,10 +41,11 @@ const MobX101 = ({ viewModel }) =>
       </pre>
     </section>
     <section>
-      <p>{viewModel.net} €</p>
-      <p>* (1 + {viewModel.vat})</p>
-      <hr/>
-      <p>= {viewModel.gross} €</p>
+      <pre>
+        <code>
+          {viewModelResult(viewModel.net, viewModel.vat, viewModel.gross)}
+        </code>
+      </pre>
     </section>
   </Columns>
 
